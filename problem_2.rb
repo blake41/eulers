@@ -1,14 +1,14 @@
 def fib(n)
-  return n if n < 2
   vals = [1, 2]
-  sum = 0
-  n.times do 
+  sum = 2
+  loop do 
     item = vals[-1] + vals[-2]
-    vals << (item)
-    vals.shift 
+    break if item > n
+    vals << item
     sum += item if item%2==0
   end
-  print sum
+  puts sum
 end
 
 fib(4000000)
+# this runs 4 million times, i need to run infinite loop and break when the fib number is over 4 million
